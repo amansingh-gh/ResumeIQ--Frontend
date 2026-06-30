@@ -2,7 +2,7 @@
 
 import axios from "axios";
 
-const API_URL = "http://localhost:3000/api/auth/resume";
+const API_URL = `${import.meta.env.VITE_API_URL}/api/auth/resume`;
 
 export const uploadResume = async (formData, token) => {
 
