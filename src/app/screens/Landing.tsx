@@ -4,7 +4,6 @@ import { Button } from "../components/ui/button";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { motion } from "motion/react";
 import ResumeSlider from "../components/ResumeSlider";
-
 export function Landing() {
   return (
     <div className="flex-1 flex flex-col items-center justify-center bg-white dark:bg-neutral-950 px-4 transition-colors">

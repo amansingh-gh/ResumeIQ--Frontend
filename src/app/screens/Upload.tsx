@@ -59,13 +59,13 @@ export function Upload() {
   };
 
   return (
-    <div className="flex-1 flex flex-col items-center justify-center bg-neutral-50 px-4 py-12">
+    <div className="flex-1 flex flex-col items-center justify-center bg-neutral-50 dark:bg-neutral-950 px-4 py-12 transition-colors">
       <div className="w-full max-w-2xl mx-auto">
         <div className="text-center mb-10 space-y-2">
-          <h1 className="text-3xl font-bold text-neutral-900">
+          <h1 className="text-3xl font-bold text-neutral-900 dark:text-white">
             Upload your Resume
           </h1>
-          <p className="text-neutral-500">
+          <p className="text-neutral-500 dark:text-neutral-400">
             We'll extract your experience and prepare it for AI analysis.
           </p>
         </div>
@@ -73,25 +73,38 @@ export function Upload() {
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
-          className={`relative border-2 border-dashed rounded-3xl p-12 flex flex-col items-center justify-center text-center transition-colors bg-white
-            ${isDragging ? "border-blue-500 bg-blue-50/50" : "border-neutral-300 hover:border-neutral-400"}`}
+          className={`relative border-2 border-dashed rounded-3xl p-12 flex flex-col items-center justify-center text-center transition-colors
+bg-white dark:bg-neutral-900
+${
+  isDragging
+    ? "border-blue-500 bg-blue-50/50 dark:bg-blue-950/20"
+    : "border-neutral-300 dark:border-neutral-700 hover:border-neutral-400 dark:hover:border-neutral-500"
+}`}
           onDragOver={handleDragOver}
           onDragLeave={handleDragLeave}
           onDrop={handleDrop}
         >
           <div
             className={`w-20 h-20 rounded-full mb-6 flex items-center justify-center transition-colors
-            ${isDragging ? "bg-blue-100" : "bg-neutral-100"}`}
+${
+  isDragging
+    ? "bg-blue-100 dark:bg-blue-900/30"
+    : "bg-neutral-100 dark:bg-neutral-800"
+}`}
           >
             <UploadCloud
-              className={`w-10 h-10 ${isDragging ? "text-blue-600" : "text-neutral-400"}`}
+              className={`w-10 h-10 ${
+                isDragging
+                  ? "text-blue-600 dark:text-blue-400"
+                  : "text-neutral-400 dark:text-neutral-500"
+              }`}
             />
           </div>
 
-          <h3 className="text-xl font-semibold text-neutral-900 mb-2">
+          <h3 className="text-xl font-semibold text-neutral-900 dark:text-white mb-2">
             Drag & drop your file here
           </h3>
-          <p className="text-neutral-500 mb-8 max-w-sm">
+          <p className="text-neutral-500 dark:text-neutral-400 mb-8 max-w-sm">
             Supported formats: PDF, DOCX. Maximum file size: 5MB.
           </p>
 
@@ -108,8 +121,8 @@ export function Upload() {
           </div>
         </motion.div>
 
-        <div className="mt-8 flex items-start gap-3 bg-blue-50/50 text-blue-800 p-4 rounded-xl border border-blue-100">
-          <AlertCircle className="w-5 h-5 text-blue-500 shrink-0 mt-0.5" />
+        <div className="mt-8 flex items-start gap-3 bg-blue-50/50 dark:bg-blue-950/20 text-blue-800 dark:text-blue-300 p-4 rounded-xl border border-blue-100 dark:border-blue-900">
+          <AlertCircle className="w-5 h-5 text-blue-500 dark:text-blue-400 shrink-0 mt-0.5" />
           <p className="text-sm">
             <strong>Privacy Note:</strong> Your resume is encrypted and only
             used for this analysis session. We do not store your data

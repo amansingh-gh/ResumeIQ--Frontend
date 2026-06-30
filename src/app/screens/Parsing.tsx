@@ -45,12 +45,12 @@ export function Parsing() {
   }, [navigate, resumeId, texts.length]);
 
   return (
-    <div className="flex-1 flex flex-col items-center justify-center bg-white px-4 relative overflow-hidden">
+    <div className="flex-1 flex flex-col items-center justify-center bg-white dark:bg-neutral-950 px-4 relative overflow-hidden transition-colors">
       {/* Subtle pulsing background elements */}
       <motion.div
         animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-100 rounded-full blur-[100px]"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-100 dark:bg-blue-900/20 rounded-full blur-[100px] transition-colors"
       />
 
       <div className="relative z-10 flex flex-col items-center text-center">
@@ -69,7 +69,7 @@ export function Parsing() {
               cx="50"
               cy="50"
               r="40"
-              stroke="#2563EB"
+              className="w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full"
               strokeWidth="4"
               fill="none"
               strokeLinecap="round"
@@ -91,7 +91,7 @@ export function Parsing() {
             transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
             className="absolute inset-0 flex items-center justify-center"
           >
-            <div className="w-2 h-2 bg-blue-600 rounded-full" />
+            <div className="w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full" />
           </motion.div>
         </div>
 
@@ -103,12 +103,12 @@ export function Parsing() {
           transition={{ duration: 0.3 }}
           className="h-8"
         >
-          <h2 className="text-xl font-medium text-neutral-800">
+          <h2 className="text-xl font-medium text-neutral-800 dark:text-white">
             {texts[textIndex]}
           </h2>
         </motion.div>
 
-        <p className="text-sm text-neutral-400 mt-4 max-w-xs">
+        <p className="text-sm text-neutral-400 dark:text-neutral-500 mt-4 max-w-xs">
           Our AI is doing the heavy lifting to ensure your resume stands out.
         </p>
       </div>
